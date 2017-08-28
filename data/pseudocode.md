@@ -10,7 +10,9 @@ FOR A SINGLE LOWERCASE
 - we need a translate class
 - we need a method that starts to do the translation
 -  
-1. input in the english character 
+
+
+1. input in the english character
 2. identify if it's lowercase or uppercase (1 lowercase)
 3. find the value associated with the key
 4. put the first two braille characters on line 1

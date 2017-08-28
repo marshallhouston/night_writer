@@ -1,6 +1,7 @@
 require 'minitest/autorun'
 require 'minitest/pride'
-require './lib/translator.rb'
+require './lib/translator'
+require './lib/night_write'
 
 class TranslatorTest < Minitest::Test
 
@@ -13,13 +14,26 @@ class TranslatorTest < Minitest::Test
 
   def test_translator_can_receive_input_from_file_reader
     #give input to the class
+    Translator.new
+    input = @reader
+
+    assert_instance_of FileReader, input
   end
 
-  def test_determine_case_of_input
+  def test_split_input_into_lines
+
+  end
+
+  def test_split_lines_into_characters
+
+  end
+
+  def test_determine_case_of_characters
     #identify if it's lowercase or uppercase
   end
 
-  def test_key_included_in_the_
+
+  def test_
 
   end
 
