@@ -10,9 +10,22 @@ class TranslatorTest < Minitest::Test
     assert_instance_of Translator, translator
   end
 
-  def test_translator_fetches_the_first_two_braille_characters
+
+  def test_translator_can_receive_input_from_file_reader
+    #give input to the class
+  end
+
+  def test_determine_case_of_input
+    #identify if it's lowercase or uppercase
+  end
+
+  def test_key_included_in_the_
+
+  end
+
+  def test_translate_english_letter_to_braille
     input = "a"
-    expected_output = "0 ."
+    expected_output = "0."
 
     translator = Translator.new
     actual_output = translator.translate(input)
