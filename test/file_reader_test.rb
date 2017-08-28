@@ -23,6 +23,7 @@ class FileReaderTest < Minitest::Test
   def test_it_can_split_output_int_lines
     file_name = FileReader.new("message.txt")
     assert_equal ["hello world", "today is sunday"], file_name.split_lines
+    #assert_equal 
     #assuming that we are gonna have more than one line in a file
   end
 end

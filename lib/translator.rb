@@ -4,8 +4,17 @@ class Translator
   # we need to pass information into this class from the file reader. how are we saving information that was read? the method read actually has the file open it up and read it.
 
   def translate(input)
+    string = ""
+    KEY_LETTERS_TO_BRAILLE[input].each_with_index do |line, index|
+      if index == 0 || index == 1
+        string << "#{line[0]}\n"
+      else
+        string << line[0]
+      end
+    end
+    string
     #for the input, it should identify the value associated with the key
-    KEY_LETTERS_TO_BRAILLE[input][0][0]
+    #KEY_LETTERS_TO_BRAILLE[input][0][0]
   end
 
   KEY_LETTERS_TO_BRAILLE = {
