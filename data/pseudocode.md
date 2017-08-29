@@ -4,6 +4,30 @@ english to braille - Translator
 ..    ..0.  ....    ......0.
 ..    ....  .0..    .0...0..
 
+
+now we have an array of all the braille characters
+- give line_1 the first element
+- give line_2 the second element
+- give line_3 the third element
+- loop back and keep going
+- after all the elements, add a new line character to the end of line_1 and line_2
+- print the lines out (line_1, line_2, line_3)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 - we need a print class that takes the array of braille characters and prints it onto specific lines
 * receive input (array of translated_braille characters from Translator class)
 * assign characters to a line
@@ -11,13 +35,6 @@ english to braille - Translator
 * print line_2 and add a new line character to the end
 * print line_3.
 * save information because it needs to be passed to FileWriter to output to ARGV[1]
-
-
-
-
-
-
-
 
 - we need a translate class to translate the strings from the file into the corresponding braille characters
 * receive input (text from FileReader ARGV[0])
@@ -35,7 +52,7 @@ TranslatorTest#test_find_value_of_one_uppercase_letter [test/translator_test.rb:
 -[["..", "..", ".0"], ["0.", "..", ".."]]
 +[[["..", "..", ".0"], ["0.", "..", ".."]]]
 
-flatten won't work because it messes up the lowercase letters. 
+flatten won't work because it messes up the lowercase letters.
 
 combined translate/print. decision to break out these two classes because they have two separate functions
 
