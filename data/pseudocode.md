@@ -5,11 +5,14 @@ english to braille - Translator
 ..    ....  .0..    .0...0..
 
 
+- we need a translate class to translate the strings from the file into the corresponding braille characters
 
-FOR A SINGLE LOWERCASE
-- we need a translate class
-- we need a method that starts to do the translation
--  
+
+
+- we need a print class that takes the array of braille characters and prints it onto specific lines
+
+
+
 
 
 1. input in the english character
