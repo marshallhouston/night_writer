@@ -11,14 +11,13 @@ class TranslatorTest < Minitest::Test
     assert_instance_of Translator, translator
   end
 
-
-  def test_translator_can_receive_input_from_file_reader
-    skip
-    Translator.new
-    input = @reader
-
-    assert_instance_of FileReader, input
-  end
+  # def test_translator_can_receive_input_from_file_reader
+  #   skip
+  #   Translator.new
+  #   input = @reader
+  #
+  #   assert_instance_of FileReader, input
+  # end
 
   def test_convert_input_to_individual_characters
     Translator.new
@@ -31,7 +30,7 @@ class TranslatorTest < Minitest::Test
   def test_find_value_of_one_letter
     translator = Translator.new
 
-    expected_output = [["0."], [".."], [".."]]
+    expected_output = ["0.", "..", ".."]
     actual_output = translator.translate_to_braille("a")
 
     assert_equal expected_output, actual_output
@@ -41,7 +40,7 @@ class TranslatorTest < Minitest::Test
     translator = Translator.new
     input = "aa"
 
-    expected_output = [["0."], [".."], [".."], ["0."], [".."], [".."]]
+    expected_output = ["0.","..","..","0.","..",".."]
     actual_output = translator.translate_to_braille(input)
 
     assert_equal expected_output, actual_output
@@ -51,7 +50,7 @@ class TranslatorTest < Minitest::Test
     translator = Translator.new
     input = "A"
 
-    expected_output = [[".."],[".."],[".0"],["0."], [".."], [".."]]
+    expected_output = ["..","..",".0","0.","..",".."]
     actual_output = translator.translate_to_braille(input)
 
     assert_equal expected_output, actual_output
@@ -61,7 +60,7 @@ class TranslatorTest < Minitest::Test
     translator = Translator.new
     input = "AA"
 
-    expected_output = [[".."],[".."],[".0"],["0."],[".."],[".."], [".."],[".."],[".0"],["0."],[".."],[".."]]
+    expected_output = ["..","..",".0","0.","..","..","..","..",".0","0.","..",".."]
     actual_output = translator.translate_to_braille(input)
 
     assert_equal expected_output, actual_output
@@ -71,7 +70,8 @@ class TranslatorTest < Minitest::Test
     translator = Translator.new
     input = "AbAb"
 
-    expected_output = [[".."],[".."],[".0"],["0."],[".."], [".."],["0."],["0."],[".."],[".."],[".."],[".0"],["0."], [".."],[".."],["0."],["0."],[".."]]
+    expected_output = ["..","..",".0","0.","..","..","0.","0.","..","..","..",".0","0.","..","..","0.","0.",".."]
+
     actual_output = translator.translate_to_braille(input)
 
     assert_equal expected_output, actual_output
@@ -81,7 +81,7 @@ class TranslatorTest < Minitest::Test
     translator = Translator.new
     input = "a A"
 
-    expected_output = [["0."],[".."],[".."],[".."],[".."],[".."],[".."],[".."],[".0"],["0."],[".."],[".."]]
+    expected_output = ["0.","..","..","..","..","..","..","..",".0","0.","..",".."]
     actual_output = translator.translate_to_braille(input)
 
     assert_equal expected_output, actual_output

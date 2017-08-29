@@ -4,16 +4,40 @@ english to braille - Translator
 ..    ..0.  ....    ......0.
 ..    ....  .0..    .0...0..
 
+- we need a print class that takes the array of braille characters and prints it onto specific lines
+* receive input (array of translated_braille characters from Translator class)
+* assign characters to a line
+* print line_1 and add a new line character to the end
+* print line_2 and add a new line character to the end
+* print line_3.
+* save information because it needs to be passed to FileWriter to output to ARGV[1]
+
+
+
+
+
+
+
 
 - we need a translate class to translate the strings from the file into the corresponding braille characters
+* receive input (text from FileReader ARGV[0])
+* turn input into an array of characters
+* iterate through characters to find the associated values
+* collect these braille values into an array. flatten(1) to make sure these are on the same level.
 
+******error with the translate class and the uppercase.... if it uses the upper case, we
 
+1) Failure:
+TranslatorTest#test_find_value_of_one_uppercase_letter [test/translator_test.rb:56]:
+--- expected
++++ actual
+@@ -1 +1 @@
+-[["..", "..", ".0"], ["0.", "..", ".."]]
++[[["..", "..", ".0"], ["0.", "..", ".."]]]
 
-- we need a print class that takes the array of braille characters and prints it onto specific lines
+flatten won't work because it messes up the lowercase letters. 
 
-
-
-
+combined translate/print. decision to break out these two classes because they have two separate functions
 
 1. input in the english character
 2. identify if it's lowercase or uppercase (1 lowercase)
@@ -23,7 +47,6 @@ english to braille - Translator
 6. put the next two braille characters on line 2
 7. go to a new line
 8. put the final two braille characters on line 3
-
 
 FOR TWO LOWERCASE
 1. input the english characters
