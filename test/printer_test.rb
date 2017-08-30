@@ -85,5 +85,37 @@ class PrinterTest < MiniTest::Test
     assert_equal expected_3, actual_3
   end
 
+  def test_adds_new_lines_to_end_of_line1_and_line2
+    printer = Printer.new
+
+    input = ["..","..",".0","0.","..","..","..","..",".0","0.","..",".."]
+    printer.assign_lines(input)
+    printer.add_new_line_characters
+
+    expected_1 = "..0...0.\n"
+    actual_1 = printer.line_1
+    expected_2 = "........\n"
+    actual_2 = printer.line_2
+
+    assert_equal expected_1, actual_1
+    assert_equal expected_2, actual_2
+  end
+
+  def test_prints_all_lines
+    printer = Printer.new
+
+    input = ["..","..",".0","0.","..","..","..","..",".0","0.","..",".."]
+    printer.assign_lines(input)
+    printer.add_new_line_characters
+    printer.prints_80_characters_per_line
+
+
+    expected = "..0...0.\n........\n.0...0.."
+    actual = printer.prints
+
+    assert_equal expected, actual
+  end
+
+
   
 end

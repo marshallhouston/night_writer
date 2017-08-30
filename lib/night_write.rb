@@ -1,5 +1,6 @@
 require './lib/file_reader'
 require './lib/file_writer'
+
 class NightWrite
 attr_reader :reader
 
