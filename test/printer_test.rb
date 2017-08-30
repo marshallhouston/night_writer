@@ -107,6 +107,7 @@ class PrinterTest < MiniTest::Test
     input = ["..","..",".0","0.","..","..","..","..",".0","0.","..",".."]
     printer.assign_lines(input)
     printer.add_new_line_characters
+    printer.prints_80_characters_per_line
 
 
     expected = "..0...0.\n........\n.0...0.."
@@ -115,4 +116,6 @@ class PrinterTest < MiniTest::Test
     assert_equal expected, actual
   end
 
+
+  
 end

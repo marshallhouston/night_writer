@@ -1,5 +1,5 @@
 class Printer
-attr_accessor :line_1, :line_2, :line_3
+attr_reader :line_1, :line_2, :line_3
 
   def initialize
     @line_1 = ''
@@ -15,14 +15,18 @@ attr_accessor :line_1, :line_2, :line_3
     end
   end
 
-  def add_new_line_characters
-    @line_1 << "\n"
-    @line_2 << "\n"
+  def prints_80_characters_per_line
+    while @line_1.length > 0
+      @line_1.slice!(0..79) << "\n"
+      @line_2.slice!(0..79) << "\n"
+      @line_3.slice!(0..79) << "\n"
+    end
   end
 
   def prints
-    final_braille = ''
-    final_braille = final_braille.concat(@line_1, @line_2, @line_3)
+    braille_text = ''
+    braille_text = braiile_text.concat(@line_1, @line_2, @line_3)
   end
+
 
 end
