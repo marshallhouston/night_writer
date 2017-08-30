@@ -4,6 +4,22 @@ english to braille - Translator
 ..    ..0.  ....    ......0.
 ..    ....  .0..    .0...0..
 
+TO DO
+1. write tests for the Night_Write class
+2. write code that passes these tests
+
+
+
+Night_Write
+1. open and read message.txt ARGV[0] using FileReader
+2. save information as @reader and use it to pass to Translator
+3. new instance of Translator that will translate the information read in FileReader
+4. use translator methods to take the text and make it into an array of braille characters
+5. create a new instance of Printer to take the translated braille characters and assign them to lines
+6. print the first 80 characters, add a new line, and keep going until it's finished
+7. pass that information to FileWriter so that it can write to the new file
+
+
 
 now we have an array of all the braille characters
 - give line_1 the first element
