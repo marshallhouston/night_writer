@@ -1,12 +1,12 @@
 class Translator
   attr_reader :text_to_translate
 
-  def initialize(text_to_translate)
-    @text_to_translate = text_to_translate
-  end
+  # def initialize(text_to_translate)
+  #   @text_to_translate = text_to_translate
+  # end
 
   def split_characters(input)
-    input.split('')
+    input.gsub(/\n/, "").split('')
   end
 
   def translate_to_braille(input)
@@ -50,6 +50,7 @@ LETTERS_TO_BRAILLE = {
         "y" => ["00",".0","00"],
         "z" => ["0.",".0","00"],
         " " => ["..","..",".."],
-        :shift => ["..","..",".0"]
+        :shift => ["..","..",".0"],
+        
       }
 end

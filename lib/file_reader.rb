@@ -1,11 +1,11 @@
 class FileReader
-  attr_reader :file_name
+  # attr_reader :file_name
 
-  def initialize(file_name)
-    @file_name = file_name
-  end
+  # def initialize(file_name)
+  #   @file_name = file_name
+  # end
 
-   def read
+   def read(file_name)
      #filename = ARGV[0]
      File.read(file_name)
    end
