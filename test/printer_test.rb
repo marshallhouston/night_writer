@@ -10,112 +10,44 @@ class PrinterTest < MiniTest::Test
     assert_instance_of Printer, printer
   end
 
-  def test_assigns_characters_to_first_line
+  def test_prints_correct_characters_for_one_letter
     printer = Printer.new
 
     input = ["0.", "..", ".."]
-    printer.assign_lines(input)
-    expected = "0."
-    actual = printer.line_1
+    expected = "0.\n..\n..\n"
+    actual = printer.print(input)
 
     assert_equal expected, actual
   end
 
-  def test_assigns_characters_to_second_line
-    printer = Printer.new
-    input = ["0.", "..", ".."]
-    printer.assign_lines(input)
-
-    expected = ".."
-    actual = printer.line_2
-
-    assert_equal expected, actual
-
-  end
-
-  def test_assigns_characters_to_third_line
-    printer = Printer.new
-    input = ["0.", "..", ".."]
-    printer.assign_lines(input)
-
-    expected = ".."
-    actual = printer.line_3
-
-    assert_equal expected, actual
-  end
-
-  def test_assigns_multiple_characters_to_a_line
+  def test_prints_correct_characters_for_two_letters_translated
     printer = Printer.new
 
     input = ["0.", "..", "..", "0.", "..", ".."]
-    printer.assign_lines(input)
-
-
-    expected_1 = "0.0."
-    actual_1 = printer.line_1
-    expected_2 = "...."
-    actual_2 = printer.line_2
-    expected_3 = "...."
-    actual_3 = printer.line_3
-
-
-    assert_equal expected_1, actual_1
-    assert_equal expected_2, actual_2
-    assert_equal expected_3, actual_3
-
-  end
-
-  def test_assigns_multiple_characters_to_a_line
-    printer = Printer.new
-
-    input = ["..","..",".0","0.","..","..","..","..",".0","0.","..",".."]
-    printer.assign_lines(input)
-
-
-    expected_1 = "..0...0."
-    actual_1 = printer.line_1
-    expected_2 = "........"
-    actual_2 = printer.line_2
-    expected_3 = ".0...0.."
-    actual_3 = printer.line_3
-
-
-    assert_equal expected_1, actual_1
-    assert_equal expected_2, actual_2
-    assert_equal expected_3, actual_3
-  end
-
-  def test_adds_new_lines_to_end_of_line1_and_line2
-    printer = Printer.new
-
-    input = ["..","..",".0","0.","..","..","..","..",".0","0.","..",".."]
-    printer.assign_lines(input)
-    printer.add_new_line_characters
-
-    expected_1 = "..0...0.\n"
-    actual_1 = printer.line_1
-    expected_2 = "........\n"
-    actual_2 = printer.line_2
-
-    assert_equal expected_1, actual_1
-    assert_equal expected_2, actual_2
-  end
-
-  def test_prints_all_lines
-    printer = Printer.new
-
-    input = ["..","..",".0","0.","..","..","..","..",".0","0.","..",".."]
-    printer.assign_lines(input)
-    printer.add_new_line_characters
-    printer.prints_80_characters_per_line
-
-
-    expected = "..0...0.\n........\n.0...0.."
-    actual = printer.prints
+    expected = "0.0.\n....\n....\n"
+    actual = printer.print(input)
 
     assert_equal expected, actual
   end
 
+  def test_prints_correct_characters_with_four_letters_translated
+    printer = Printer.new
 
-  
+    input = ["..","..",".0","0.","..","..","..","..",".0","0.","..",".."]
+    expected = "..0...0.\n........\n.0...0..\n"
+    actual = printer.print(input)
+
+    assert_equal expected, actual
+  end
+
+  def test_prints_fourth_line_if_41_characters_input
+    printer = Printer.new
+
+    input = ["0.", "..", "..", "0.", "..", "..", "0.", "..", "..", "0.", "..", "..", "0.", "..", "..", "0.", "..", "..", "0.", "..", "..", "0.", "..", "..", "0.", "..", "..", "0.", "..", "..", "0.", "..", "..", "0.", "..", "..", "0.", "..", "..", "0.", "..", "..", "0.", "..", "..", "0.", "..", "..", "0.", "..", "..", "0.", "..", "..", "0.", "..", "..", "0.", "..", "..", "0.", "..", "..", "0.", "..", "..", "0.", "..", "..", "0.", "..", "..", "0.", "..", "..", "0.", "..", "..", "0.", "..", "..", "0.", "..", "..", "0.", "..", "..", "0.", "..", "..", "0.", "..", "..", "0.", "..", "..", "0.", "..", "..", "0.", "..", "..", "0.", "..", "..", "0.", "..", "..", "0.", "..", "..", "0.", "..", "..", "0.", "..", "..", "0.", "..", "..", "0.", "..", ".."]
+    expected = "0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.\n................................................................................\n................................................................................\n0.\n..\n..\n"
+    actual = printer.print(input)
+
+    assert_equal expected, actual
+  end
+
 end
