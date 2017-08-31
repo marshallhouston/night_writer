@@ -1,4 +1,3 @@
-# require './lib/file_reader'
 require './lib/translator'
 require './lib/printer'
 
