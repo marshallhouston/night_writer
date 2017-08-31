@@ -17,20 +17,9 @@ class Printer
       final_text << line_2.slice!(0..79) << "\n"
       final_text << line_3.slice!(0..79) << "\n"
     end
-    # final_text << line_1.split[0..79] + "\n"
-    # final_text << line_2.split[0..79] + "\n"
-    # final_text << line_3.split[0..79] + "\n"
 
     final_text
 
   end
-
-
-
-  #def prints
-  #   braille_text = ''
-  #   braille_text = braiile_text.concat(@line_1, @line_2, @line_3)
-  # end
-
 
 end
