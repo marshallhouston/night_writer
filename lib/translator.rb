@@ -1,10 +1,6 @@
 class Translator
   attr_reader :text_to_translate
 
-  # def initialize(text_to_translate)
-  #   @text_to_translate = text_to_translate
-  # end
-
   def split_characters(input)
     input.gsub(/\n/, "").split('')
   end
