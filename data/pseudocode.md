@@ -5,57 +5,11 @@ english to braille - Translator
 ..    ....  .0..    .0...0..
 
 
-now we have an array of all the braille characters
-- give line_1 the first element
-- give line_2 the second element
-- give line_3 the third element
-- loop back and keep going
-- after all the elements, add a new line character to the end of line_1 and line_2
-- print the lines out (line_1, line_2, line_3)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-- we need a print class that takes the array of braille characters and prints it onto specific lines
-* receive input (array of translated_braille characters from Translator class)
-* assign characters to a line
-* print line_1 and add a new line character to the end
-* print line_2 and add a new line character to the end
-* print line_3.
-* save information because it needs to be passed to FileWriter to output to ARGV[1]
-
-- we need a translate class to translate the strings from the file into the corresponding braille characters
-* receive input (text from FileReader ARGV[0])
-* turn input into an array of characters
-* iterate through characters to find the associated values
-* collect these braille values into an array. flatten(1) to make sure these are on the same level.
-
-******error with the translate class and the uppercase.... if it uses the upper case, we
-
-1) Failure:
-TranslatorTest#test_find_value_of_one_uppercase_letter [test/translator_test.rb:56]:
---- expected
-+++ actual
-@@ -1 +1 @@
--[["..", "..", ".0"], ["0.", "..", ".."]]
-+[[["..", "..", ".0"], ["0.", "..", ".."]]]
-
-flatten won't work because it messes up the lowercase letters.
-
-combined translate/print. decision to break out these two classes because they have two separate functions
-
+FOR A SINGLE LOWERCASE
+- we need a translate class
+- we need a method that starts to do the translation
+-  
 1. input in the english character
 2. identify if it's lowercase or uppercase (1 lowercase)
 3. find the value associated with the key
@@ -64,6 +18,7 @@ combined translate/print. decision to break out these two classes because they h
 6. put the next two braille characters on line 2
 7. go to a new line
 8. put the final two braille characters on line 3
+
 
 FOR TWO LOWERCASE
 1. input the english characters
